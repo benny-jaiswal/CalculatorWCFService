@@ -1,0 +1,9 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/CalculatorWCFService/.vs/CalculatorWCFService
+/.vs
+/CalculatorWCFService/CalculatorWCFService/bin
+/CalculatorWCFService/CalculatorWCFService/obj
+/CalculatorWCFService/packages
