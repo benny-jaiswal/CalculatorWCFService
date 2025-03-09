@@ -97,15 +97,19 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Models\XmlResponse.cs" />
+    <Compile Include="Models\XmlRequest.cs" />
     <Compile Include="Services\CalculatorService.svc.cs">
       <DependentUpon>CalculatorService.svc</DependentUpon>
     </Compile>
     <Compile Include="Services\ICalculatorService.cs" />
-    <Compile Include="App_Data\MathsRequest.cs" />
-    <Compile Include="App_Data\MathsResponse.cs" />
+    <Compile Include="Models\JsonRequest.cs" />
+    <Compile Include="Models\JsonResponse.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+  </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
     <None Include="Web.Debug.config">

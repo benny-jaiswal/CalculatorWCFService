@@ -6,11 +6,9 @@ using System.Xml.Serialization;
 namespace CalculatorWCFService.App_Code
 {
     [DataContract(Namespace = "http://tempuri.org/")]
-    [XmlRoot("EvaluateXml", Namespace = "http://tempuri.org/")]
-    public class MathsRequest
+    public class JsonRequest
     {
-        [DataMember]
-        [XmlElement("Maths")]
+        [DataMember]        
         public Maths Maths { get; set; }
     }
 
@@ -18,25 +16,21 @@ namespace CalculatorWCFService.App_Code
     public class Maths
     {
         [DataMember]
-        [XmlElement("Operation")]
         public Operation Operation { get; set; }
     }
 
     [DataContract(Namespace = "http://tempuri.org/")]
     public class Operation
     {
-        [DataMember]
-        [XmlAttribute("ID")]
+        [DataMember]        
         [JsonProperty("ID")]
         public string Id { get; set; }
 
-        [DataMember]
-        [XmlElement("Value")]
+        [DataMember]        
         [JsonProperty("Value")]
         public List<double> Values { get; set; }
 
-        [DataMember]
-        [XmlElement("InnerOperation")]
+        [DataMember]        
         [JsonProperty("InnerOperation")]
         public Operation InnerOperation { get; set; }
 

@@ -4,7 +4,7 @@ using System.Runtime.Serialization;
 namespace CalculatorWCFService.App_Code
 {    
     [DataContract]
-    public class MathsResponse
+    public class JsonResponse
     {
         [DataMember]
         public List<OperationResult> Results { get; set; }
