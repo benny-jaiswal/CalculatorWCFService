@@ -44,8 +44,6 @@ namespace CalculatorWCFService.Services
             return new XmlResponse { Results = results };
         }
 
-
-
         
         private List<OperationResult> Evaluate(Operation operation)
         {

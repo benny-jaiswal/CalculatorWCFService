@@ -8,7 +8,7 @@ namespace CalculatorWCFService.App_Code
     [DataContract(Namespace = "http://tempuri.org/")]
     public class JsonRequest
     {
-        [DataMember]        
+        [DataMember]
         public Maths Maths { get; set; }
     }
 
@@ -22,15 +22,15 @@ namespace CalculatorWCFService.App_Code
     [DataContract(Namespace = "http://tempuri.org/")]
     public class Operation
     {
-        [DataMember]        
+        [DataMember]
         [JsonProperty("ID")]
         public string Id { get; set; }
 
-        [DataMember]        
+        [DataMember]
         [JsonProperty("Value")]
         public List<double> Values { get; set; }
 
-        [DataMember]        
+        [DataMember]
         [JsonProperty("InnerOperation")]
         public Operation InnerOperation { get; set; }
 

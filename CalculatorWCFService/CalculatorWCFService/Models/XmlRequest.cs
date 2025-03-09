@@ -4,38 +4,40 @@ using System.Xml.Serialization;
 
 namespace CalculatorWCFService.App_Code
 {
-    // This class is dedicated to the WCF XML request
-    [DataContract(Name = "EvaluateXml", Namespace = "http://tempuri.org/")]
-    [XmlRoot("EvaluateXml", Namespace = "http://tempuri.org/")]
+    // Root element <EvaluateXml> with no namespace
+    [DataContract(Name = "EvaluateXml", Namespace = "")]
+    [XmlRoot("EvaluateXml", Namespace = "")]
     public class XmlRequest
     {
-        // Matches <Maths> element inside <EvaluateXml>
+        // Matches <Maths> element
         [DataMember]
-        [XmlElement("Maths", Namespace = "http://tempuri.org/")]
+        [XmlElement("Maths", Namespace = "")]
         public XmlMaths Maths { get; set; }
     }
 
-    [DataContract(Namespace = "http://tempuri.org/")]
+    [DataContract(Namespace = "")]
     public class XmlMaths
     {
         [DataMember]
-        [XmlElement("Operation", Namespace = "http://tempuri.org/")]
+        [XmlElement("Operation", Namespace = "")]
         public XmlOperation Operation { get; set; }
     }
 
-    [DataContract(Namespace = "http://tempuri.org/")]
+    [DataContract(Namespace = "")]
     public class XmlOperation
     {
         [DataMember]
-        [XmlAttribute("ID")]
+        [XmlAttribute("Id")] // The attribute is "ID" with no namespace
         public string Id { get; set; }
 
+        // Each <Value> element
         [DataMember]
-        [XmlElement("Value")]
+        [XmlElement("Values", Namespace = "")]
         public List<double> Values { get; set; }
 
+        // Nested <Operation> for the inner operation
         [DataMember]
-        [XmlElement("Operation", Namespace = "http://tempuri.org/")]
+        [XmlElement("Operation", Namespace = "")]
         public XmlOperation InnerOperation { get; set; }
 
         public XmlOperation()
